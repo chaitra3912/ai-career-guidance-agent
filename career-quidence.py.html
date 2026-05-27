@@ -1,0 +1,328 @@
+# ======================================================
+# ADVANCED AI CAREER GUIDANCE AGENT
+# WITH BETTER SCORING + PERSONALITY ANALYSIS
+# Grade 9 Project
+# ======================================================
+
+print("================================================")
+print("      AI CAREER GUIDANCE AGENT")
+print("   WITH ADVANCED SCORING SYSTEM")
+print("================================================")
+
+name = input("Enter your name: ")
+
+print("\nHello", name)
+print("Please answer the following questions honestly.\n")
+
+# ------------------------------------------------------
+# CAREER SCORES
+# ------------------------------------------------------
+
+technology = 0
+medical = 0
+creative = 0
+business = 0
+law = 0
+
+# ------------------------------------------------------
+# PERSONALITY SCORES
+# ------------------------------------------------------
+
+introvert = 0
+extrovert = 0
+
+# ------------------------------------------------------
+# QUESTION 1
+# ------------------------------------------------------
+
+print("1. Which subject do you enjoy the most?")
+print("a. Mathematics")
+print("b. Biology")
+print("c. Art")
+print("d. Commerce")
+print("e. Social Studies")
+
+q1 = input("Enter option: ")
+
+if q1 == "a":
+    technology += 5
+
+elif q1 == "b":
+    medical += 5
+
+elif q1 == "c":
+    creative += 5
+
+elif q1 == "d":
+    business += 5
+
+elif q1 == "e":
+    law += 5
+
+# ------------------------------------------------------
+# QUESTION 2
+# ------------------------------------------------------
+
+print("\n2. What activity do you enjoy?")
+print("a. Coding apps")
+print("b. Helping sick people")
+print("c. Drawing or designing")
+print("d. Selling or managing")
+print("e. Debating and speaking")
+
+q2 = input("Enter option: ")
+
+if q2 == "a":
+    technology += 4
+    introvert += 2
+
+elif q2 == "b":
+    medical += 4
+    extrovert += 2
+
+elif q2 == "c":
+    creative += 4
+    introvert += 2
+
+elif q2 == "d":
+    business += 4
+    extrovert += 2
+
+elif q2 == "e":
+    law += 4
+    extrovert += 2
+
+# ------------------------------------------------------
+# QUESTION 3
+# ------------------------------------------------------
+
+print("\n3. Which job sounds most exciting?")
+print("a. AI Engineer")
+print("b. Doctor")
+print("c. Animator")
+print("d. Entrepreneur")
+print("e. Lawyer")
+
+q3 = input("Enter option: ")
+
+if q3 == "a":
+    technology += 5
+
+elif q3 == "b":
+    medical += 5
+
+elif q3 == "c":
+    creative += 5
+
+elif q3 == "d":
+    business += 5
+
+elif q3 == "e":
+    law += 5
+
+# ------------------------------------------------------
+# QUESTION 4
+# ------------------------------------------------------
+
+print("\n4. How do you solve problems?")
+print("a. Logical thinking")
+print("b. Caring for people")
+print("c. Creative ideas")
+print("d. Leadership")
+print("e. Discussion and arguments")
+
+q4 = input("Enter option: ")
+
+if q4 == "a":
+    technology += 3
+
+elif q4 == "b":
+    medical += 3
+
+elif q4 == "c":
+    creative += 3
+
+elif q4 == "d":
+    business += 3
+
+elif q4 == "e":
+    law += 3
+
+# ------------------------------------------------------
+# QUESTION 5 - PERSONALITY
+# ------------------------------------------------------
+
+print("\n5. In school projects, what do you prefer?")
+print("a. Working alone")
+print("b. Working with a team")
+
+q5 = input("Enter option: ")
+
+if q5 == "a":
+    introvert += 4
+
+elif q5 == "b":
+    extrovert += 4
+
+# ------------------------------------------------------
+# QUESTION 6 - PERSONALITY
+# ------------------------------------------------------
+
+print("\n6. What gives you more energy?")
+print("a. Quiet environments")
+print("b. Social interaction")
+
+q6 = input("Enter option: ")
+
+if q6 == "a":
+    introvert += 4
+
+elif q6 == "b":
+    extrovert += 4
+
+# ------------------------------------------------------
+# QUESTION 7
+# ------------------------------------------------------
+
+print("\n7. Which skill is your strength?")
+print("a. Problem solving")
+print("b. Caring nature")
+print("c. Imagination")
+print("d. Leadership")
+print("e. Communication")
+
+q7 = input("Enter option: ")
+
+if q7 == "a":
+    technology += 4
+
+elif q7 == "b":
+    medical += 4
+
+elif q7 == "c":
+    creative += 4
+
+elif q7 == "d":
+    business += 4
+
+elif q7 == "e":
+    law += 4
+
+# ------------------------------------------------------
+# STORE CAREER SCORES
+# ------------------------------------------------------
+
+career_scores = {
+    "Technology": technology,
+    "Medical": medical,
+    "Creative": creative,
+    "Business": business,
+    "Law": law
+}
+
+# ------------------------------------------------------
+# FIND BEST CAREER
+# ------------------------------------------------------
+
+career_field = max(career_scores, key=career_scores.get)
+
+# ------------------------------------------------------
+# FIND PERSONALITY
+# ------------------------------------------------------
+
+difference = abs(introvert - extrovert)
+
+if difference <= 2:
+    personality = "Ambivert"
+
+elif introvert > extrovert:
+    personality = "Introvert"
+
+else:
+    personality = "Extrovert"
+
+# ------------------------------------------------------
+# OUTPUT SECTION
+# ------------------------------------------------------
+
+print("\n================================================")
+print("                FINAL RESULT")
+print("================================================")
+
+print("\nName:", name)
+
+# Personality Result
+print("\nPersonality Type:", personality)
+
+if personality == "Introvert":
+    print("You enjoy focus, creativity, and calm environments.")
+
+elif personality == "Extrovert":
+    print("You enjoy teamwork, leadership, and communication.")
+
+else:
+    print("You balance teamwork and independent thinking well.")
+
+# Career Result
+print("\nRecommended Career Field:", career_field)
+
+# Career Suggestions
+if career_field == "Technology":
+
+    print("\nTop Career Suggestions:")
+    print("- Software Engineer")
+    print("- AI Engineer")
+    print("- Cybersecurity Expert")
+    print("- Robotics Engineer")
+
+elif career_field == "Medical":
+
+    print("\nTop Career Suggestions:")
+    print("- Doctor")
+    print("- Pharmacist")
+    print("- Nurse")
+    print("- Medical Scientist")
+
+elif career_field == "Creative":
+
+    print("\nTop Career Suggestions:")
+    print("- Graphic Designer")
+    print("- Animator")
+    print("- Fashion Designer")
+    print("- Filmmaker")
+
+elif career_field == "Business":
+
+    print("\nTop Career Suggestions:")
+    print("- Entrepreneur")
+    print("- Business Analyst")
+    print("- Marketing Manager")
+    print("- Accountant")
+
+elif career_field == "Law":
+
+    print("\nTop Career Suggestions:")
+    print("- Lawyer")
+    print("- Judge")
+    print("- Public Speaker")
+    print("- Civil Services Officer")
+
+# ------------------------------------------------------
+# SHOW SCORE DETAILS
+# ------------------------------------------------------
+
+print("\n================================================")
+print("               SCORE ANALYSIS")
+print("================================================")
+
+print("Technology Score :", technology)
+print("Medical Score    :", medical)
+print("Creative Score   :", creative)
+print("Business Score   :", business)
+print("Law Score        :", law)
+
+print("\nIntrovert Score  :", introvert)
+print("Extrovert Score  :", extrovert)
+
+print("\nThank you for using AI Career Guidance Agent!")
+
